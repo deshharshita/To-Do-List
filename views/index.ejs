@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+	<div id="container">
+		<h1 id="listName">To-do list<icon class="fa fa-plus"></icon></h1>
+		<form action="/lists" method="POST">
+			<input type="text" name="todo" placeholder="Add New Todo">
+		</form>
+		<% lists.forEach(function(list){ %>
+			<ul>
+				<% list["todos"].forEach(function(todo){ %>
+					<li><span><icon class="fa fa-trash-alt"></icon></span><%= todo %> </li>
+				<%})%>
+			</ul>
+		<% }) %>
+		
+	</div>
+	<a href="/lists/new" class="btn btn-primary">New List</a>
+	
+
+	<script type="text/javascript" src="/js/todo.js"></script>
+<%- include("partials/footer"); -%>
+<!-- </body>
+</html> -->
